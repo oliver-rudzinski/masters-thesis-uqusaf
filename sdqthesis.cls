@@ -101,6 +101,17 @@
 \clubpenalty=10000 %prevent orphans
 \widowpenalty=10000 %prevent widows
 
+\newcommand{\co}{%
+  \leavevmode
+  \begingroup
+  \setbox 2 = \hbox {\small c}%
+  \setbox 0 = \hbox {/}%
+  \dimen 0 = \ht 0  \advance \dimen 0 by -\ht 2
+  \raise \dimen 0 \box 2
+  \kern -0.3333\wd0/\kern -0.3333\wd 0
+  \lower \dp 0 \hbox {\small o}%
+  \endgroup
+}
 
 %% --------------
 %% | Title page |
@@ -126,7 +137,7 @@
 \setkomafont{title}{\huge\sffamily\bfseries}
 \setkomafont{subtitle}{\normalfont\large}
 
-\uppertitleback{Karlsruher Institut für Technologie\\ Fakultät für Informatik\\ Postfach 6980\\ 76128 Karlsruhe}
+\uppertitleback{HECTOR School of Engineering and \& Management\\ \co\space International Department of the KIT gGmbH\\ Schlossplatz 19\\ 76131 Karlsruhe}
 
 %% variables for title page
 \newcommand{\theinstitute}{\ifcurrentbaselanguage{English}
@@ -145,9 +156,9 @@
 \newcommand{\reviewerone}[1]{\renewcommand{\thereviewerone}{#1}}
 \newcommand{\reviewertwo}[1]{\renewcommand{\thereviewertwo}{#1}}
 
-\newcommand{\editingtime}[1]{%
+\newcommand{\editingtime}[2]{%
 \renewcommand{\theeditstart}{#1}%
-%\renewcommand{\theeditend}{#2}%
+\renewcommand{\theeditend}{#2}%
 %% do not show the date
 \date{}
 }
@@ -162,7 +173,7 @@
   			\ifcurrentbaselanguage{English}{Second reviewer}{Zweitgutachter}: & \thereviewertwo\\
   		\end{tabular}
 		\vskip2em
-		\theeditstart{}
+		\theeditstart{} -- \theeditend{}
 	}
 }
 
