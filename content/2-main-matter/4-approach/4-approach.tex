@@ -1,0 +1,232 @@
+% ==========================================================================
+%	APPROACH
+	\chapter{Approach}
+	\label{ch:approach}
+% ==========================================================================
+
+This chapter outlines the necessary steps and methodology that is applied in order to achieve the aspired contributions in terms of the desired research goal of this work.
+
+In essence, the underlying research methodology will follow an experimental and empirical approach that aims to (i) find limitations and challenges in current frameworks, (ii) develop a unified framework that addresses these issues, and finally (iii) validate its applicability and overall benefit after the fact. Each aspect is prepared and explained in the following, whereas the explicit evaluation approach will be introduced in \autoref{ch:evaluation}.
+
+\todo[inline, color=green!40]{Optional: Add Design Science Research Approach.}
+
+\section{Sampling Approach}
+
+Before pursuing the first contribution of this work, the research environment and scope need to be prepared. Chapters \ref{ch:intro} and \ref{ch:related-work} already established the overall domain under this research will take place, which is \acl{cc}. For that matter, a sample of appropriate \ac{cc} offerings and services must be derived in order to have a finite scope of consideration. Similarly, this is also the case for the choice of currently used frameworks that solely consider \textit{either} usability \textit{or} security design or evaluation. 
+
+\subsection{\acs{cc} Vendor and Services Sampling}
+
+There exists a large number of independent \ac{cc} vendors, all offering another vast landscape of numerous \ac{cc} services. Due to limitations in time and scope, the goal is to have three \ac{cc} offerings, each providing five comparable, thus similar, \ac{cc} services. This results in up to 15 independent service executions that can be put under test for current framework assessment as well as for validation of the unified framework.
+
+The choice of the vendor and service samples is based on quantitative indicators and will be defined and practically applied in the following. Additionally, in preparation of the subsequent contributions of this work, the total sample set is split into subsamples for distinct assessment (cf. C1) and validation (cf. C3) purposes. This will allow for an independent assessment of current frameworks as well as a controllable validation of the unified framework to be designed. 
+
+\subsubsection{Generalized Approach \& Rationale}
+
+The utmost goal of the practical research environment is to be as generalizable and close to actual \ac{cc} usage as possible. Therefore, the choice of \ac{cc} vendors for this work is based on their individual market share in their area of business. This ensures that the the considered vendors are relevant to the industry, thus having a significant number of users that might benefit from usable security assessment. Plus, from a technical point of view, it can be expected that major vendors offer a variety of services, ensuring that popular services across these vendors are comparable in functionality.
+
+With that, the actual selection of \ac{cc} candidates can commence. Here, the respective criteria for a justified acceptance or rejection are as follows:
+
+\begin{description}
+	\item[Popularity across \ac{cc} Vendors] The service candidate must be frequently used within its particular vendor. The general underlying service must be popular across all considered \ac{cc} vendors.
+	\item[Comparability across \ac{cc} Vendors] The underlying \ac{cc} service of a candidate must be available across all considered vendors.
+	\item[Significant Security Relevance] The configuration of the service candidate must be presented with significant security relevance such that the user has an influence on its particular security settings. This can include, but is not limited to, multi-tenancy, \ac{iam}, or virtualization.
+	\item[Free Tier Availability] The research to this work is not financially supported by any means. The usage of the service candidate, potentially with a limited feature set, must be available free of charge at least for the duration of this research.
+\end{description}
+
+The latter criteria can be atomically answered. However, there does not exist a general popularity index to each vendor, its services, or \ac{cc} services in general. Therefore, the popularity analysis is done manually and enriched by the acceptance criteria from above as follows:
+
+\begin{enumerate}
+	\item Determine $n$ articles that list most popular \ac{cc} services for each considered vendor. Disregard lists that are not ordered by assumed popularity.
+	\item For each article, list the position of every rated service. Only consider the top ten listings, and disregard services that build on top of each other, as well as consolidated services.
+	\item Link ranked services across the considered vendors. Disregard all services that do not appear in every ranking.
+	\item Determine average service popularity for each vendor. Begin with services that appear in all $n$ articles, then in $(n-1)$ articles, $(n-2)$, and so on.
+	\item Determine overall popularity, weighing individual averages by the corresponding vendor's market share overhead.
+	\item Disqualify each remaining service that does not offer usage free of charge.
+	\item Disqualify each remaining service that does not present itself with significant security relevance.
+	\item Choose top five services from the remaining services by their overall popularity ranking.
+\end{enumerate}
+
+Referring to the previously mentioned number of three vendors to be considered, it must be stated that this work requires the consideration of a particular cloud services vendor, namely \acf{hpe} and their as-a-service offering \textit{\acs{hpe} GreenLake}. It can be expected that this particular offering will not withstand the criterion of highest marketshare within \ac{cc}. However, this deviation from the sampling approach is not expected to significantly distort the research, as the goal of sampling comparable services across all vendors remains. Additionally, the choice of particular services will solely be done based on the vendors that hold significant marketshare and linked to \acs{hpe} GreenLake after the fact.
+
+\subsubsection{Explicit Sample Determination}
+
+The generalized \ac{cc} vendor and service sampling approach is now applied explicitly. 
+
+\paragraph{\acs{cc} Vendor Determination by Market Share}
+The \ac{cc} vendor market share determination is provided by Synergy Research Group \cite{noauthor_huge_2022}: With 33\% of the entire market share in the first quarter of 2022, \textit{\acf{aws}} present themselves as the most relevant cloud provider, followed by \textit{Microsoft Azure} with 22\% and \textit{\acf{gcp}} with 10\% for the same period. This concludes the vendor choice, resulting in \ac{aws} and Azure for following consideration, in addition to \acs{hpe} GreenLake, which was predetermined. \acs{aws} and Azure will now be assessed in terms of potential \ac{cc} service candidates.
+
+\paragraph{Service Popularity Ranking Articles} 
+\autoref{tab:4-1-articles} lists all articles respective to the individual \ac{cc} vendor that will be analyzed in terms of service popularity. The variety of articles mitigates the occasional lack of objective quality within individual articles. Articles \cite{noauthor_aws_2022} and \cite{kumar_list_2021} cannot be considered as they do not sort services according to their perceived popularity.
+\input{content/2-main-matter/4-approach/tables/4-1-articles.tex}
+
+\paragraph{Nominal Service Popularity Ranking by Vendor}
+\autoref{tab:4-2-popularity} lists each \ac{cc} service by vendor, alongside its nominal popularity ranking according to the corresponding article rating. Each table only considers the top ten services per article. For Microsoft Azure, each article considers the Azure \textit{DevOps} service within their top ten. However, this service must be disregarded as it is a consolidated service, containing multiple services that can also be consumed independently. This is why the Azure table only counts up to nine services per rating article. Furthermore, \cite{dent_revealed_nodate} and \cite{house_top_2021} list \ac{aws} \textit{EC2 Auto Scaling} as a separate service. Again, this is disregarded as it builds on top of the regular EC2 service.
+\input{content/2-main-matter/4-approach/tables/4-2-popularity.tex}
+
+\paragraph{Service Mapping Across Vendors}
+The individual services from \autoref{tab:4-2-popularity} are now linked in terms of their general \ac{cc} service purpose. This eliminates a majority of services mentioned previously because vendor-specific services either do not have a counterpart with a different vendor or do not appear in both popularity listings. This results in \autoref{tab:4-3-mapping}.
+\input{content/2-main-matter/4-approach/tables/4-3-mapping.tex}
+
+Additionally, is needs to be mentioned that \ac{aws} \textit{Elastic Block Storage (EBS)} can only be partly applied to Azure \textit{Blob Storage}, as the latter actually provides object storage capabilities. For \ac{aws}, this is already given by \textit{S3}, which is why EBS is also disregarded.
+
+\paragraph{Average Service Popularity Determination by Vendor}
+For the remaining services, the average service popularity is now determined based on the popularity rating within the corresponding articles. The total vendor-specific rank is determined by the calculation of the average rank and the number of articles the service appeared in. Services that appear in all articles are considered first, followed by services that appear in all but one article, and so forth. This results in the ranking depicted in \autoref{tab:4-4-average} on the next page. \newpage
+\input{content/2-main-matter/4-approach/tables/4-4-average.tex}
+
+\paragraph{Total Service Popularity Determination}
+The vendor-specific average popularity rankings are now used to calculate the general services' overall popularity. This is enriched by considering the larger marketshare of \ac{aws}, which is around 50\% higher than Azure's. As a lower rank value represents a better rating, this is accounted for by multiplying the \ac{aws} rating by $\frac{2}{3}$ (i.e., the reciprocal of $1.5$). This results in the rating table shown in \autoref{tab:4-5-total} on the next page. \newpage
+\input{content/2-main-matter/4-approach/tables/4-5-total.tex}
+
+\paragraph{Service Disqualification}
+Finally, the preliminary top five services by ranking need to be assessed in terms of free-tier availability and security relevance. All services but Azure \textit{Content Delivery Network} are available for free, which is why content delivery in total cannot be considered further. This results in the following allocation, depicted in \autoref{tab:4-6-disqualified}:
+\input{content/2-main-matter/4-approach/tables/4-6-disqualified.tex}
+
+From a security relevance perspective, all remaining top-five services present themselves with the necessity of security configuration in terms of multi-tenancy, access control, etc., which will be of value when assessing current frameworks and validating the unified framework. Therefore, no adaptation to this rating is required.
+
+\paragraph{Link with \acs{hpe} GreenLake services}
+After choosing the overall services based on the two most relevant \ac{cc} vendors by market share, these services can now be linked to available services within \acs{hpe} GreenLake. This concludes the overall choice and mapping of \ac{cc} vendors and services and is represented in \autoref{tab:4-7-final}.
+\input{content/2-main-matter/4-approach/tables/4-7-final.tex}
+
+It needs to be mentioned that, being a relatively new vendor in the area of \ac{cc}, \acs{hpe} GreenLake cannot provide every service that was determined in the previous steps. Specifically, \acs{hpe} GreenLake does not offer any kind of NoSQL database service. This inconvenience will be accounted for when allocating vendor-service combinations into assessment and validation subsets.
+
+\subsubsection{Assessment \& Validation Subset Allocation}
+
+The definition and allocation of subsets for assessment of current frameworks and validation of the unified framework is required to enable both disciplines with the available sample of \ac{cc} vendor-service combinations. Specifically, the subsets fulfil the following goals:
+
+\begin{description}
+	\item[Assessment Subset] allow for a holistic, generalized assessment of current usability and security frameworks in order to gain insights for the design of the unified framework.
+	\item[Validation Subset] allow for a controlled validation of the unified framework within and outside its design space in terms of applicability, consistency, efficiency, as well as external robustness.
+\end{description}
+
+The allocation of the assessment subset should account for the entire service sample such that service-specific aspects are considered. In order to reduce the risk of overfitting to a specific vendor, this subset should additionally consider multiple vendors.
+
+The validation subset should account for three types of evaluations, namely
+\begin{itemize}
+	\item the validation of applicability and consistency within the design set and space (i.e., a control set),
+	\item the validation of fidelity with real-world phenomena and robustness outside the design set, but still within the design space, and
+	\item the validation of effectiveness, efficiency, and external consistency outside the design space. 
+\end{itemize}
+
+Considering these criteria in combination with the limited vendor-service combinations, the following subset allocation is defined in \autoref{tab:4-8-subsets}.
+\input{content/2-main-matter/4-approach/tables/4-8-subsets.tex}
+
+By designing the unified framework based on findings from all \ac{aws} services, enhanced with the two most-used Azure services alongside the security-critical service of \ac{iam} within Azure, the assessment considers every individual service across multiple vendors in a justified manner. The assessment vendor-service combinations are referred to with $A_i$ in \autoref{tab:4-8-subsets}. These already mentioned Azure services then function as the control set for in-space validation (referred to with $K_i$), while the remaining Azure services and the entire service set of \ac{hpe} GreenLake define the rest of the validation set elements (referred to with $V_i$). 
+
+Referring to the lack of NoSQL service availability for \ac{hpe} GreenLake, this can now be neglected, as an out-of-design validation of NoSQL services will nevertheless be possible.
+
+\subsection{Current Assessment Framework Sampling}
+
+Other than with the \ac{cc} vendor and services sample, the sample of current frameworks is not limited in its sole number. Rather, it is important to deduce which general kinds of usability and security frameworks are suited for the matter of this work, i.e., which frameworks are already tangible to be rewritten for the purpose of usable security assessment. This implies a general applicability of the framework within its scope rather than the need of designing individual experiments and corresponding performance indicators. This limitation is justified as the goal of this work is to provide a generally applicable framework for usable security itself, reducing the necessity of performing evaluations on a case-by-case basis. 
+
+Apart from that, again, the degree of establishment of the framework within its corresponding area of application further justifies the consideration of particular current frameworks. These information will be analyzed by means of available literature in the following.
+
+\subsubsection{Usability Inspection Framework Sampling}
+
+Nielsen (1994) summarized a list of general usability inspection methods \cite{nielsen_usability_1994} that has been re-validated by Hollingsed and Novick (2007) \cite{hollingsed_usability_2007}. While these sources might appear dated, it appears that there were no further general usability inspection methods created and used in more recent times. Therefore, the corresponding findings are expected to still hold today and will be enriched by further justification.
+
+Nielsen presents the following usability inspection methods that are explained and contextualized for the purpose of this work in the following:
+
+\begin{description}
+	\item[Heuristic evaluation] informal method performed by usability specialists to validate usability elements by means of a set of established guidelines \cite{nielsen_usability_1994}.
+	
+	This process is still recognized as being the most effective and most widely used method in terms of usability inspection \cite{hollingsed_usability_2007}. It is based on general guidelines that can be used for different kinds of usability inspections, regardless of the underlying interface.
+	\item[Cognitive walkthrough] more detailed procedure simulating a user solving a problem, understanding if user's goals and memory lead to a correct action \cite{nielsen_usability_1994}.
+	
+	This method is less generally applicable compared to heuristic evaluation. It is rather more dependent on the actual task at hand, requiring a specific experiment design and corresponding passing and failing criteria. It can therefore hardly be supported by a framework. Plus, it is less widely used in practice than heuristics \cite{hollingsed_usability_2007}.
+	\item[Pluralistic usability walkthrough] meetings in which different stakeholders discuss individual dialogue elements of a usability scenario \cite{nielsen_usability_1994}.
+	
+	These walkthroughs present themselves with similar shortcomings as cognitive walkthroughs. In addition, they require the consideration of different users (developers, designers, end users, etc.) \cite{nielsen_usability_1994}, which again leads to assume that the design of such experiment is highly individual and dependent on the actual use case.
+	\item[Formal usability inspection] combination of heuristic evaluation and cognitive walkthroughs \cite{nielsen_usability_1994}.
+	
+	Again, similar downsides to those from individual cognitive walkthroughs appear. Apart from being highly user and task-dependent, the experiments can produce biased insights as developers of the interface under test assume the role of a user \cite{hollingsed_usability_2007}. It has also been stated that this form of usability inspection has hardly been used after the 1990s \cite{hollingsed_usability_2007}.
+	\item[Feature inspection] Individual assessment of features that are evaluated regarding standard tasks, potentially long sequences or unintuitive steps \cite{nielsen_usability_1994}.
+	
+	Similarly to what has already been said, feature inspections require concrete task and performance criteria definitions.
+	\item[Consistency and standards inspection] isolated validation of design consistency with regards to predefined standards and compliance \cite{nielsen_usability_1994}.
+	
+	While this discipline is important for sole usability purposes, design consistency and standards play a minor role in terms of usable security.
+\end{description}
+
+By exclusion, it can be argued that heuristic evaluation is the most suitable usability inspection method that can be used as a starting foundation to develop a usable security assessment framework from it. As mentioned, it is presented as the most widely used and most effective method, which increasingly justifies the approach to design advanced heuristics for usable security purposes. However, other methods (e.g., formal usability inspections and feature inspections) can also benefit from heuristics. It also needs to be mentioned that empirical case-by-case inspections remain most effective outside the scope of frameworks, guidelines and methods \cite{hollingsed_usability_2007}. However, this cannot be considered within the scope of that work as the ultimate goal is to provide a framework that reduces the need of individual experiment creation. This ultimately means, that the unified framework will also be developed as a set of usable security heuristics.
+
+Furthermore, it is necessary to further limit the scope to particular sets of current heuristics. For that matter, the most popular heuristics are deduced from literature. Pierre (2015) conducted a literature analysis against 33 distinct sets of usability inspection sets in order to find similarities and differences among them \cite{pierre_heuristics_2015}. In essence, it is observed that all usability heuristics follow the common goal of providing general guidelines for usability design and assessment. It can also be expected that more recent creations of heuristics are more specialized in terms of a limited, but more focussed, area of application.
+
+The choice of particular heuristic sets should therefore be based on the general applicability of these heuristics which is expected to appear in older publications. Based on its popularity in both academia and the industry, the choice falls on
+
+\begin{itemize}
+	\item \textit{The Eight Golden Rules of Interface Design} by Ben Shneiderman (most recently in \cite{shneiderman_eight_nodate}, originally in \cite{shneiderman_designing_1987}, overall more than 18,000 citations)
+	\item \textit{10 Usability Heuristics for User Interface Design} by Jakob Nielsen (most recently in \cite{nielsen_10_2020}, originally in \cite{nielsen_heuristic_1990}, overall more than 10,000 citations)
+\end{itemize}
+
+Both sets of heuristics were adapted and updated by the original authors over time, which makes them both established and recent. The number of overall citations underlines their popularity and justifies the consideration of those heuristics going forward. It needs to be mentioned that similarities in the heuristics across both sets cannot be excluded. However, this is accepted as vague differences might prove valuable in terms of findings for the creation of the unified framework.
+
+\subsubsection{Security Design and Assessment Framework Sampling}
+The corresponding sampling of security design and assessment frameworks follows the same criteria, being general applicability as well as establishment and popularity in the field.
+
+The sampling process starts with the work produced by Saltzer and Schröder (1975) \cite{saltzer_protection_1975}. As mentioned, their Security Design Principles are considered the starting point of usable security research, especially the final principle of \textit{psychological acceptability} (cf. \autoref{sec:foundation-usable_security}). Initially, it appears reasonable to consider their principles within this sample. However, the datedness of this source needs to be addressed.
+
+For that matter, Smith (2012) aimed at validating these principles \cite{smith_contemporary_2012}. In summary, these security design principles still hold, with the nuance that some of those principles remain more important or critical than other. Furthermore, more recent developments of such principles are strongly influenced by Saltzer's and Schröder's original work which leads to assume that their principles remain relevant \cite{smith_contemporary_2012}. Further literature research yielded no results that contained notable differences in such design principles. As with the heuristics sampling, there exist specialized sets of principles that violate the criterion of general applicability. The popularity is validated by observing over 3,000 citations of their work, which is significantly higher than any other work presenting a security design or assessment framework.
+
+This leads to the consequence that the Security Design Principles by Saltzer and Schröder (1975) represents the only current security framework that will be considered in this work going forward.
+
+\subsection{Sampling Summary}
+In conclusion, the following current frameworks will be considered:
+
+\begin{description}
+	\item[Usability I] \textit{The Eight Golden Rules of Interface Design} by Ben Shneiderman
+	\item[Usability II] \textit{10 Usability Heuristics for User Interface Design} by Jakob Nielsen
+	\item[Security] \textit{Security Design Principles} by Saltzer \& Schröder
+\end{description}
+
+These will be applied onto the \ac{cc} service assessment set from \autoref{tab:4-8-subsets}. The explicit approach to that process is described in the next section.
+
+\section{Assessment Approach}
+\todo[inline]{Refine current framework assessment approach.}
+In order to evaluate the applicability of current usability and security frameworks, the chosen frameworks will be applied on the eight \ac{cc} assessment services $A_{i}$ from \autoref{tab:4-8-subsets}. Specifically, every \ac{cc} assessment service-vendor combination will be individually evaluated by means of all three mentioned frameworks.
+
+This yields a total of 24 assessments. Each assessment will be performed manually, noting findings in terms of the usable security applicability for the particular case. It is expected to have the following categories of findings:
+
+\begin{itemize}
+	\item pure usability aspects directly related to the application of a usability framework,
+	\item pure usability aspects derived from applying a security framework,
+	\item pure security aspects directly related to the application of a security framework,
+	\item pure security aspects derived from applying a usability framework,
+	\item usable security aspects derived from a usability framework, and
+	\item usable security aspects derived from a security framework.
+\end{itemize}
+
+These categories then yield three applicability degrees:
+
+\begin{enumerate}
+	\item aspects that are applicable without change,
+	\item aspects that are applicable with change, and
+	\item aspects that are not applicable at all.
+\end{enumerate}
+
+Furthermore, each assessment is expected to aid the subsequent design process of the unified framework (cf. C2) such that relevant aspects that are missing from the current framework can be derived by justified assumption. After performing each evaluation, the findings and insights can be prioritized in terms of their relevance, how often they appeared, etc.
+
+The results from the control group evaluation will be most thoroughly documented as they will serve as additional input to the validation process of the unified framework (cf. C3).
+
+It is expected that certain cloud services' interfaces do not solely include security aspects, which is why the evaluation will only focus on aspects within the usability that is mostly or entirely security-related.
+
+The ultimate design of this proposed assessment will be revised after deciding on the specific \ac{cc} offerings, services, as well as current frameworks, if necessary. In any case, the output of the total assessment will be subsequently used in the next contribution C2.
+
+\section{Design Approach}
+\todo[inline]{Refine unified framework design approach.}
+The findings from C1 are now applied in order to design the unified qualitative usable security assessment framework, as part of the second contribution.
+
+The design will consider the following findings in order:
+
+\begin{enumerate}
+	\item High-priority aspects from current frameworks that can be taken over without change.
+	\item High-priority aspects from current frameworks that can be taken over with change.
+	\item Low-priority aspects from current frameworks that can be taken over without change.
+	\item Low-priority aspects from current frameworks that can be taken over with change.
+	\item High-priority aspects derived by justified assumption.
+	\item Low-priority aspects derived by justified assumption.
+\end{enumerate}
+
+After each step, it is validated that the included steps are not redundant to the previously undertaken step. Finally, after performing all steps based on all findings from C1, all aspects are considered in total in terms of consolidation or generalization, if applicable.
+
+Again, the ultimate design of this proposed framework development process will be revised after having the actual assessment of the current frameworks. In any case, this contribution is expected to yield a unified framework that is similar to the mode of application to the previously chosen, current frameworks. This framework is now subject to validation in terms of the third and last contribution C3, outlined in its separate \autoref{ch:evaluation}.
+

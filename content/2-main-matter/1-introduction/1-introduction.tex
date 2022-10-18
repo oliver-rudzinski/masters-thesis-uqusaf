@@ -1,0 +1,62 @@
+% - INTRODUCTION -----------------------------------------------------------
+\chapter{Introduction}
+\label{ch:intro}
+% --------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------
+\section{Motivation} \label{sec:intro-motivation}
+% --------------------------------------------------------------------------
+
+Cybersecurity has been and still remains \textit{the} most crucial discipline in the domain of \Ac{it}: According to Mordor Intelligence, the global cybersecurity market was valued at approx. \$150 billion in 2021. This trend is expected to continue, rising up to approx. \$317 billion by the year of 2027 with a constant annual growth rate of 13.4\% \cite{noauthor_cybersecurity_2022}. This can be linked to the average cost of a single data breach equaling \$4.24 million in the same year and describing the highest value on record so far, as per IBM \cite{noauthor_cost_2022}. These rises are proportional to the increase in cyber attacks: Malware attacks increased by 358\% in 2020, Ransomeware attacks rose by 435\% \cite{noauthor_malware_2021}.The current landscape of cybersecurity can be summarized as an arms race between the attackers of valuable resources and their protectors. 
+
+Looking at the domain of \ac{cc}, 27\% of organizations report having experienced security incidents within one year \cite{schulze_cloud_2022}. Overall, the fear of security challenges is the main concern why some businesses do not introduce \ac{cc} at all \cite{noauthor_2021_2021, noauthor_2022_2022}.
+
+Businesses investing in sophisticated security technology and services might not be enough, as 95\% of cybersecurity issues can be linked to human error \cite{mee_after_2020}. One reason for this might be the increased complexity of security systems and settings, leading to misconfigurations that in turn lead to security vulnerabilities. In \ac{cc}, misconfiguration in the cloud infrastructure accounted for 23\% of security incidents \cite{schulze_cloud_2022}. It can be assumed that the increased complexity of \ac{it} security features reduces its usability, resulting in a decrease of their efficiency.
+
+The research discipline of \textit{usable security} has recognized this issue and aims at bringing effective \ac{it} security together with information system usability \cite{garfinkel_usable_2014}. Considered separately, there exist several  design and assessment frameworks for security aspects within information systems, e.g., the Security Design Principles by Saltzer and Schröder (1975) \cite{saltzer_protection_1975}, the Security By Design Principles according to the \ac{owasp}, or the Cybersecurity Framework by the \ac{nist} \cite{noauthor_framework_2018}. On the other hand, usability assessments, e.g., the Usability Heuristics by Nielsen (1990) \cite{nielsen_heuristic_1990}, or usability principles and guidelines support the evaluation of the user friendliness of \acp{ui} \cite{moran_usability_2019}. These existing frameworks will hereinafter be referred to as \textit{current frameworks}.
+
+However, usable security research as a whole is considered complicated due to interdisciplinary factors, technological velocity, etc. \cite{garfinkel_usable_2014}. That is why it is currently conducted based on individual definition and execution of experiments rather than supported by guidelines or frameworks. This can lead to slower examination of the problems at hand, consequently leading to fewer insights on how to potentially address them.
+
+This is where this proposed Master's thesis ties in: It suggests a unified framework for qualitative usable security assessment that will be developed and evaluated experimentally within the security-crucial domain of \ac{cc}. This will hereinafter be referred to as the \textit{unified framework}.
+
+% --------------------------------------------------------------------------
+\section{Problem Statements} \label{sec:intro-problems}
+% --------------------------------------------------------------------------
+
+The previous motivation to the topic (cf. \autoref{sec:intro-motivation}) as well as further demonstration of current research in that area (cf. \autoref{ch:related-work}) recognize the following problems:
+
+\begin{description}
+	\item[P1] Usable security research is currently conducted on a case-by-case basis which limits efficiency and quantity of insights in order to address problems within that domain.
+	\item[P2] In terms of \ac{cc}, security configuration aspects are currently complicated to consider in terms of usable security, which visibly leads to a significant amount of security incidents.
+\end{description}
+
+% --------------------------------------------------------------------------
+\section{Contribution} \label{sec:intro-contribution}
+% --------------------------------------------------------------------------
+
+The problems stated in \autoref{sec:intro-problems} are aimed at being addressed through the following aspired contributions. While these contributions are build on one another, they are also designed to individually undertake issues within current usable security research.
+
+\begin{description}
+	\item[C1] Evaluate the applicability of present usability and security design frameworks to usable security individually to the domain of \ac{cc} in order to deduct limitations and improvements.
+\end{description}
+
+This contribution will partly address P1, as there is limited research present regarding the explicit applicability of usability and security design frameworks to usable security. Thus, it cannot be justified that these frameworks are not applicable per se. This contribution's output will generate the input for C2 in order to have a foundation for the design of the unified framework. As this assessment will be pracitically performed within a \ac{cc} environment, this contribution also partly covers P2.
+
+\begin{description}
+	\item[C2] Design a unified qualitative usable security assessment framework based on the findings from C1.
+\end{description}
+
+This contribution will mainly address P1 by applying the findings from C1 in order to develop a unified framework for usable security evaluation. It is expected that certain aspects of the frameworks under test in C1 will appear in the unified framework, while others might be refined or newly introduced.
+	
+\begin{description}
+	\item[C3] Validate the unified framework regarding improvements in terms of applicability, conclusivity, and efficiency compared to C1.
+\end{description}
+
+This contribution, again, addresses P1 and P2 in that the actual benefit of the new framework needs to be validated within a \ac{cc} security feature scope. \\\
+
+All in all, P2 will be addressed across all contributions as each practical application will be done in terms of \ac{cc} security features. The actual methodology for the achievement of the contributions will be outlined in \autoref{ch:approach}.
+
+% --------------------------------------------------------------------------
+\section{Thesis Structure} \label{sec:intro-structure}
+\todo[inline]{Add correct thesis structure.}
+% --------------------------------------------------------------------------

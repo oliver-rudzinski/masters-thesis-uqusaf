@@ -70,6 +70,20 @@ in collaboration with Hewlett Packard Enterprise}
 \usepackage[printonlyused]{acronym}
 \addbibresource{bibliography.bib}
 \usepackage{setspace}
+\usepackage{todonotes}
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage[list=true]{subcaption}
+\usepackage{lipsum}
+\usepackage{multirow}
+\usepackage{xcolor}
+\setlength{\tabcolsep}{4pt}
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
 %% ====================================
 %% ====================================
@@ -89,7 +103,7 @@ in collaboration with Hewlett Packard Enterprise}
 %% The Preamble begins here
 \frontmatter
 
-% \input{content/1-front-matter/1-declaration.tex}
+\input{content/1-front-matter/1-declaration.tex}
 
 \setcounter{page}{1}
 \pagenumbering{roman}
@@ -106,7 +120,7 @@ in collaboration with Hewlett Packard Enterprise}
 %% The text is included from the following files:
 %% - sections/abstract
 
-% \includeabstract
+\includeabstract
 
 
 
@@ -114,20 +128,16 @@ in collaboration with Hewlett Packard Enterprise}
 %% |   Table of Contents  |
 %% ------------------------
 \renewcommand*\contentsname{Table of Contents}
-
-\begin{spacing}{0.85}
 \tableofcontents 
-\end{spacing}
-
 
 \chapter*{List of Acronyms} 
 \addcontentsline{toc}{chapter}{List of Acronyms}
 \input{content/1-front-matter/3-acronyms.tex}
 	
 \clearpage	
-%\addcontentsline{toc}{chapter}{\listfigurename}
-% \listoffigures
-% \listoftables
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\listoftables
 
 %% -----------------
 %% |   Main part   |
@@ -135,14 +145,29 @@ in collaboration with Hewlett Packard Enterprise}
 
 \mainmatter
 \pagenumbering{arabic}
-\input{content/2-research-proposal/research-proposal-v3.tex}
+
+\input{content/2-main-matter/1-introduction/1-introduction.tex}
+
+\input{content/2-main-matter/2-foundations/2-foundations.tex}
+
+\input{content/2-main-matter/3-related-work/3-related-work.tex}
+
+\input{content/2-main-matter/4-approach/4-approach.tex}
+
+\input{content/2-main-matter/5-assessment/5-assessment.tex}
+
+\input{content/2-main-matter/6-design/6-design.tex}
+
+\input{content/2-main-matter/7-evaluation/7-evaluation.tex}
+
+\input{content/2-main-matter/8-outlook-conclusion/8-outlook-conclusion.tex}
 
 %% --------------------
 %% |   Bibliography   |
 %% --------------------
 
-
 %% Add entry to the table of contents for the bibliography
+\newpage
 \pagenumbering{alph}
 \printbibliography[heading=bibintoc]
 

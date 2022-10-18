@@ -1,0 +1,72 @@
+% - RELATED WORK -----------------------------------------------------------
+\chapter{Related Work}
+\label{ch:related-work}
+
+As mentioned in \autoref{sec:foundation-usable_security}, the discipline of usable security has recently gained in importance. Therefore, it is of interest, which aspects of this underlying work are already present in current research, and which aspects of interest have currently not been addressed. The discussion of related work will prove valuable for the identification of current research limitations that need to be addressed by the contributions of this work. As with \autoref{ch:foundations}, it is expected that the consideration of related work might be enlarged during the actual research.
+
+\section{Present Research}
+
+\subsection{General Research on Usable Security}
+
+Starting with a critical look at usable security research, Theofanos (2020) points out that, even though this discipline has been around for a quarter of a decade, there have been little to no achievements to the underlying problem of so-called \textit{security fatigue} observed in user behavior. She points out the major areas where usable security might make a difference (e.g., authentication, encryption, user dialogs, etc.) and appeals to developers and researchers to make this field of study more applicable and practical \cite{theofanos_is_2020}. The arguments and appeals support this proposed work.
+
+More concretely, Acar et al. (2016) recognize the problem of this research field being almost entirely end-user-centric up until now. They suggest specific measures and key research questions in order to consider developers' and \ac{it} professionals' points of view in that domain. This includes the evaluation of interfaces outside of end user scope, introducing secure usability research towards \acp{api}, as well as providing relevant security resources for the development process \cite{acar_you_2016}. Similar claims are made by Green and Smith (2016). They, again, demand more emphasis on secure and usable \acp{api} \cite{green_developers_2016}. These claims support the validity of this work's research topic and will be of great guidance pursuing the goal of developing a qualitative usable security assessment framework.
+
+Chiasson et al. (2007) furthermore propose general design principles to make administrator interfaces more psychologically graspable \cite{chiasson_even_2007}. These were not validated by the authors during research, but can be used as knowledgable input to the design of this work's assessment framework.
+
+Finally, Lennartsson et al. (2020) analyzed current research directions of usable security more thorougly than possible in this work. Apart from other findings, they recognized the urge of ``developing concrete guidelines for implementation of user-centric security`` \cite{lennartsson_exploring_2020}, which, again, validates this work's purpose.
+
+\subsection{Towards Usable Security Frameworks}
+Parkin et al. (2010) recognized the psychological distance between technology-driven password policies in contrast to their users and what negative effect this could have on businesses' security. They essentially suggest an \ac{hcd}-driven approach that includes users of the security mechanism and their feedback throughout its entire design phase \cite{parkin_stealth_2010}. However, this approach ties in with how usable security design and evaluation is currently conducted in terms of individual experiments. Plus, the evaluation and enhancement of features potentially in place is missing here.
+
+Similarly, Feth et al. (2017) extended the individual steps of the \ac{hcd} process to include security awareness from the start. They applied their model exemplarily to a smart home use case. Apart from mentioning the models abstractness, they realize their uncertainty regarding the model's applicability to other use case domains \cite{feth_user-centered_2017}. Furthermore, the research appears to combine security and privacy-related aspects. It also leads to assume that it is rather end-user-focussed which ties in with the majority of current usable security research.
+
+This looks differently when considering research performed by Caputo et al. (2016) who manufactured interview questionnaires for different stages of security feature development and introduction (i.e., development, product, and management level). They then performed three case studies validating the applicability of their methodology and falsified some hypotheses from the beginning (e.g., that complicated security measures are \textit{always} more secure, that usability is common sense, and that there \textit{must be} a tradeoff between usability and security) \cite{caputo_barriers_2016}. Although very valuable for further research, the questionnaires provided are very abstract in that their development does not appear to be based on specific domains nor on current usability or security evaluation frameworks. It also puts a large emphasis on management perception as well as benchmarks in the \textit{process} of development and introduction, rather than on the development or evaluation itself.
+
+Conversely, Ambore et al. (2021) present an evaluation approach that is inspired by usability evaluation heuristics. Specifically, they derive heuristics from general usability assessment and refine as well as apply them to the domain of financial technology. They validate their approach by performing usable security assessment in financial organizations and conclude that such evaluation, in fact, improved usable security of the evaluated applications \cite{ambore_development_2021}. This research can be considered as a starting point for the development of this work's unified framework for the different application domain of cloud computing.
+
+Another approach of usable security evaluation is presented by Hausawi and Allen (2015). They introduce a general quantitative evaluation approach in terms of a risk assessment for usable security. The output of the assessment is a numerical value that aims at classifying the overall risk of present or non-present usable security in terms of an application under test \cite{tryfonas_usable-security_2015}. While this approach appears very general and thus applicable to various domains of interest, it might add an additional burden to the process as it is solely quantitative and does not take individual aspects of usable security into account.
+
+\subsection{Research on Cloud Security}
+Understanding current security-related \ac{cc} research and its underlying or discovered problems might aid in moving this work's practical approach in a relevant direction.
+
+A variety of researchers claims that the aspects of multi-tenancy \cite{hashizume_analysis_2013, singh_cloud_2017,paxton_cloud_2016,manakattu_security_2020}, extensive virtualization \cite{felsch_how_2015,hashizume_analysis_2013}, and \ac{iam} \cite{almulla_cloud_2010} present the most critical security concerns across \ac{cc} infrastructure management, regardless of their deployment of service models \cite{manakattu_security_2020}. This leads to assume that general features implementing inherent characteristics of \ac{cc} are generally implemented similarly. Consequently, they also share similar security issues.
+
+In slight contrast, Yandong and Yongsheng (2012) mention that public cloud vendors might be more susceptible to cyberattacks as it is known that they store a vast amount of data that could be leveraged for malicious activities \cite{yandong_cloud_2012}. While it can be argued, that many cloud security issues cannot solely be tackled by improving their security feature usability, an understanding of the criticality of those features can support prioritization of validation criteria when designing a unified usable security assessment framework. 
+
+\subsection{Towards Usable Security in the Cloud}
+Research on usable security in the domain of \ac{cc} is strongly limited. However, Fahl et al. (2012) propose a way to introduce usable security in terms of \ac{cc} management. They argue that the current way of securing \ac{cc} resources is done via public key infrastructures that are perceived to be very complicated from an end-users point of view. They propose a novel form of user-friendly security mechanism that removes the perceived burden in the form of a distinct security service \cite{fahl_confidentiality_2012}. While it appears valuable that entirely new mechanisms are researched and developed with the primary goal of usability, this research does not consider the improvement of current established systems by enhancing their usability. The reinvention of security mechanisms should be the last resort, as it merely shifts responsibility from one end to another. This, in turn, might lead to entirely new security concerns.
+
+\section{Achievements \& Limitations}
+
+Based on the findings of the evaluation of the related work to that topic, it can be seen that a lot of effort has been put into discussing and partially solving usable security issues. Specifically, the following general research achievements can be summarized:
+
+\begin{description}
+	\item[A1] Recognition of the need for more usable security consideration across all human-facing security features, especially outside of end-user applications.
+	\item[A2] Following from A1, the specific usable security consideration under the domain of \ac{cc}.
+	\item[A3] Recognition of prime security issues within the domain of \ac{cc} outside of the scope of usable security.
+	\item[A4] Recognition of more efficient usable security assessment.
+	\item[A5] Following from A3, initial development and partial evaluation of such frameworks under limited scope and generalization.
+\end{description}	
+
+Following a process of exclusion, the following limitations to that research can be derived:
+
+\begin{description}
+	\item[L1] Despite A1, there is currently little effort to focus on developers and \ac{it} professionals in terms of usable security enablement.
+	\item[L2] Despite A2 and A3, the efforts in terms of usable security in the domain of \ac{cc} are limited to reinventing security features rather than assessing and improving them from a usable security point of view.
+	\item[L3] Despite of A4 and A5, there currently does not exist a unified, qualitative usable security assessment framework that \ac{cc} could benefit from.
+\end{description}
+
+With that, the derived limitations can be linked to the problem statements (cf. \autoref{sec:intro-problems}) and proposed contributions (cf. \autoref{sec:intro-contribution}) of this work, which will be done in the following section.
+
+\section{Application of Contributions}
+The following relationship of problems, contributions, as well as current research's achievements and limitations shall finally justify the direction and scope of this work:
+
+\begin{itemize}
+	\item \textbf{P1} [tedious usable security evaluation] might benefit from addressing\\ \textbf{L3} [lack of unified assessment framework],\\ which will be achieved by sequentially performing\\ \textbf{C1} [applicability evaluation of current frameworks],\\ \textbf{C2} [design of unified framework], and\\\textbf{C3} [validation of unified framework], aided by input given by\\ \textbf{A5} [suggested frameworks from current research].
+	\item \textbf{P2} [\ac{cc} security incidents due to misconfiguration] might benefit from addressing\\ \textbf{L2} [lack of usable security assessment of \ac{cc} security features], and inherently\\ \textbf{L1} [little consideration of \ac{it} professionals within usable security research],\\ which will be achieved by the \ac{cc} scope inside\\ \textbf{C1} [see above] and\\ \textbf{C3} [see above], aided by input given by \\\textbf{A2} [initial consideration of \ac{cc} usable security]  and \\\textbf{A3} [prime security challenges within \ac{cc}]. 
+\end{itemize}
+
+The specific approach of solving the mentioned problems through the aspired contributions will be outlined in \autoref{ch:approach}.
+
+% --------------------------------------------------------------------------

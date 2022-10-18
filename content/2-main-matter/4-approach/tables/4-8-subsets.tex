@@ -1,0 +1,15 @@
+\begin{table}[h!]
+	\centering
+	\footnotesize
+	\begin{tabularx}{\textwidth}{Xb{1cm}cXb{2cm}cXb{1cm}} \toprule
+		\multicolumn{2}{c}{\textbf{AWS}} && \multicolumn{2}{c}{\textbf{Azure}} && \multicolumn{2}{c}{\textbf{HPE GreenLake}} \\ \cmidrule{1-2} \cmidrule{4-5} \cmidrule{7-8}
+		\text{service} & \text{purpose} &   & \text{service}   & \text{purpose}        &   & \text{service}   & \text{purpose} \\ \midrule
+		EC2            & $A_1$          &   & Virtual Machines & $K_1 = A_6 \vee V_1 $ &   & Virtual Machines & $V_6$          \\ \midrule[0.25pt]
+		S3             & $A_2$          &   & Blob Storage     & $K_2 = A_7 \vee V_2 $ &   & Object Storage   & $V_7$          \\ \midrule[0.25pt]
+		IAM            & $A_3$          &   & Active Directory & $K_3 = A_8 \vee V_3 $ &   & IAM              & $V_8$          \\ \midrule[0.25pt]
+		RDS            & $A_4$          &   & SQL              & $V_4$                 &   & Microsoft SQL    & $V_9$          \\ \midrule[0.25pt]
+		DynamoDB       & $A_5$          &   & Cosmos DB        & $V_5$                 &   &                  &                \\ \bottomrule
+	\end{tabularx}
+	\caption{Definition of Assessment, Control, and Validation Subsets}
+	\label{tab:4-8-subsets}
+\end{table}

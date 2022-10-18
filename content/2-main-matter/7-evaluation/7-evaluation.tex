@@ -1,0 +1,17 @@
+% - EVALUATION -------------------------------------------------------------
+\chapter{Evaluation}
+\label{ch:evaluation}
+% --------------------------------------------------------------------------
+
+The validation of the unified framework is expected to assess its validity and benefits compared to current frameworks as well as overall evaluate the success of this research. It also defines the final contribution C3 of this work. This will be done in two steps; (i) the validation by means of the control set $K_{CC}$ as well as by means of the remaining feature set $V_{CC}$.
+
+As the control set features have already been assessed by means of the current frameworks, this form of validation can evaluate efficiency, conclusivity, and applicability in comparison to those frameworks. Since these features have been used to design the framework, there is the risk that it is rather tailored to the particular feature set rather than generally applicable (i.e., \textit{overfitting}). For that, the remaining validation set is used. Even though it cannot compare its outcome with current frameworks, it can validate if the unified framework is generally applicable, efficient and conclusive outside of its design space (i.e., specific cloud offerings \textit{and} services. In short:
+
+\begin{description}
+	\item[Comparison of Operation] $\mathcal{K}_c \coloneqq K_{CC} \times (C_{FW_{sec}} \cup C_{FW_{use}}) = \{FW_{sec_1}(B2), \dots, FW_{use_2}(B3)\}$ compared with $\mathcal{K}_u \coloneqq K_{CC} \times FW_u = \{FW_u(B2), FW_u(B3)\}$
+	\item[Validation of General Applicability] $\mathcal{V} \coloneqq (V_{CC} \setminus K_{CC}) \times FW_u = \{FW_u(B4), FW_u(B5), FW_u(C2),\\ FW_u(C3), FW_u(C4), FW_u(C5)\}$,
+\end{description}
+
+with $\mathcal{K}_c$ being the control set assessment of current frameworks, $\mathcal{K}_u$ being the control set assessment of the unified framework, and $FW_u$ being the unified framework application. 
+
+Again, as with previous contributions, the ultimate design of this proposed evaluation process will be revised after having the actual framework design in place. This is because the nature of a qualitative framework complicates performing a quantifiable evaluation. In any case, this evaluation will conclude the work by answering whether this unified framework actually solves (or, at least, partially addresses) the underlying problems of this thesis (i.e., slow case-by-case approach for usable security research as well as little consideration of non-end-users), critically consider shortcomings of the developed framework, and finally suggest further research in that particular area.

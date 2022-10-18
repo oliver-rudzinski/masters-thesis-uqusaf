@@ -1,0 +1,17 @@
+\begin{table}[h!]
+	\centering
+	\footnotesize
+	\begin{tabularx}{\textwidth}{b{3.72cm}b{2.8cm}rcb{2.8cm}rcrcc} \toprule
+		  & \multicolumn{2}{c}{AWS} &   & \multicolumn{2}{c}{Azure} &   & \multicolumn{3}{c}{\textbf{total calc.}} \\ \cmidrule{2-3} \cmidrule{5-6}	 \cmidrule{8-10} \textbf{Service} &  \text{name} & \text{rank} & & \text{name} & \text{rank} & & \text{WAVG} & & \textbf{rank}\\ \cmidrule{1-6} \cmidrule{8-8} \cmidrule{10-10}
+		\textbf{Virtual Machines}  & EC2 & 1 & & Virtual Machines & 1 & & 0.83 & & \textbf{1} \\ \midrule[0.25pt]
+		\textbf{NoSQL Database}    & DynamoDB & 6 & & Cosmos DB & 2.5 & & 3.25 & & \textbf{2} \\ \midrule[0.25pt]	
+		\textbf{Object Storage}  & S3 & 3 & & Blob Storage & 5 & & 3.50 & & \textbf{3} \\ \midrule[0.25pt]
+		\textbf{Relational Database}  & RDS & 2 & & SQL & 6 & & 3.67 & & \textbf{4} \\ \midrule[0.25pt]
+		\textbf{Access Management} &  IAM & 8 & & Active Directory & 2.5 & & 3.92 & & \textbf{5} \\ \midrule
+		\color{gray}\textbf{Serverless Computing}  & \color{gray}Lambda & \color{gray}5 & & \color{gray}Functions & \color{gray}7 & & \color{gray}5.17 & & \color{gray}\textbf{6} \\ \midrule[0.25pt]
+		\color{gray}\textbf{Process Automation}  & \color{gray}CloudFormation & \color{gray}7 & & \color{gray}Automation & \color{gray}8 & & \color{gray}6.33 & & \color{gray}\textbf{7} \\ \midrule[0.25pt]
+		\color{gray}\textbf{Content Delivery}  & \color{gray}CloudFront & \color{gray}4 & & \color{gray}{Content Delivery \newline Network} & \color{gray}4 & & \color{gray}3.33 & & \color{gray}\textbf{DSQ} \\ \bottomrule 
+	\end{tabularx}
+	\caption{\acs{cc} Service Ranking after Disqualification}
+	\label{tab:4-6-disqualified}
+\end{table}

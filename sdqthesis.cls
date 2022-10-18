@@ -137,7 +137,7 @@
 \setkomafont{title}{\huge\sffamily\bfseries}
 \setkomafont{subtitle}{\normalfont\large}
 
-\uppertitleback{HECTOR School of Engineering and \& Management\\ \co\space International Department of the KIT gGmbH\\ Schlossplatz 19\\ 76131 Karlsruhe}
+\uppertitleback{HECTOR School of Engineering \& Management\\ \co\space International Department of the KIT gGmbH\\ Schlossplatz 19\\ 76131 Karlsruhe}
 
 %% variables for title page
 \newcommand{\theinstitute}{\ifcurrentbaselanguage{English}
